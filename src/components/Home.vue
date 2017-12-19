@@ -4,6 +4,9 @@
     <article class="notification is-primary">
       <p>This is the home page for the app, it is <strong>not secured</strong>.</p>
     </article>
+    <article class="notification is-primary">
+      <p>new Big Change</p>
+    </article>
   </section>
 </template>
 
