@@ -8,12 +8,12 @@ import { routes } from './router/routes';
 // Firebase config - this is provided when you create your app
 // Swap out these settings for your project settings
 const config = {
-  apiKey: "AIzaSyARIllJX5NwVZf9T5brOqhx3dDvLgGZfl8",
-  authDomain: "playing-218ba.firebaseapp.com",
-  databaseURL: "https://playing-218ba.firebaseio.com",
-  projectId: "playing-218ba",
-  storageBucket: "playing-218ba.appspot.com",
-  messagingSenderId: "1092711989826"
+    apiKey: "AIzaSyBYplIZS6RbULC5770tXu4GQBqjzHxizic",
+    authDomain: "slide-creator.firebaseapp.com",
+    databaseURL: "https://slide-creator.firebaseio.com",
+    projectId: "slide-creator",
+    storageBucket: "slide-creator.appspot.com",
+    messagingSenderId: "1019489366872"
 };
 
 // Initialize Firebase

@@ -16,3 +16,8 @@ npm run build
 ```
 
 For detailed explanation on how things work read the tutorial.
+
+
+# References
+https://medium.freecodecamp.org/authentication-with-vue-js-firebase-5c3a82149f66
+
