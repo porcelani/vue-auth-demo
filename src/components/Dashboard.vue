@@ -1,18 +1,41 @@
 <template>
-  <section class="section">
+  <section id="dashboard">
     <h1 class="title has-text-centered">Dashboard</h1>
-    <article class="notification is-info">
-      <p>This is the dashboard area which is secured via the router. A user must have an account and be logged in to view this page.</p>
-    </article>
+    <h2>{{ msg }}</h2>
+    <button v-on:click="show">Click</button>
   </section>
 </template>
 
 <script>
-// You would obiusly use this component to show secure dashboard information.
-// As it stands it is just a simple Vue page with nothing intersting to show.
+  import Firebase from "firebase";
+
+  export default {
+    data: function () {
+      return {
+        msg: "Testing",
+        todos: []
+      };
+    },
+    mounted() {
+
+    },
+    methods: {
+      show: function () {
+        console.log("Show");
+      },
+      // Push new post in to Todos
+      addTodo: function () {
+        Todos.push(this.newTodo)
+        this.newTodo.text = ''
+      },
+      // Remove child based on key - firebase function
+      removeTodo: function (key) {
+        Todos.child(key).remove()
+      }
+    }
+
+  };
 </script>
 
 <style lang="scss">
-// Basic styles are pulled in from the Bulma framework https://bulma.io/
-// These style tags could be omitted as they arre not used.
 </style>
