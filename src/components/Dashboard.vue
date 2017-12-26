@@ -1,39 +1,44 @@
 <template>
-  <section id="dashboard">
-    <h1 class="title has-text-centered">Dashboard</h1>
-    <h2>{{ msg }}</h2>
-    <button v-on:click="show">Click</button>
-  </section>
+  <div id="program">
+    <h2>Programas</h2>
+
+    <input type="text" @keyup.enter="addProgram(program)" v-model="program.name" placeholder="Novo programa"/>
+
+    <ul class="program-list">
+      <li v-for="program in programs">
+        {{program.name}}
+        <button @click="removeProgram(program)">Remove</button>
+      </li>
+
+    </ul>
+
+  </div>
 </template>
 
 <script>
-  import Firebase from "firebase";
+  import {dbProgramRef} from "../firebaseConfig";
+
 
   export default {
     data: function () {
       return {
-        msg: "Testing",
-        todos: []
+        programs: [],
+        program: {}
       };
     },
     mounted() {
-
     },
+    computed: {},
     methods: {
-      show: function () {
-        console.log("Show");
+      addProgram: function (copyProgram) {
+        this.program = {};
+        dbProgramRef.push(copyProgram)
       },
-      // Push new post in to Todos
-      addTodo: function () {
-        Todos.push(this.newTodo)
-        this.newTodo.text = ''
-      },
-      // Remove child based on key - firebase function
-      removeTodo: function (key) {
-        Todos.child(key).remove()
+
+      removeProgram: function (program) {
+        dbProgramRef.child(program).remove()
       }
     }
-
   };
 </script>
 

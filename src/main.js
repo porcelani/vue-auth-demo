@@ -4,20 +4,7 @@ import Firebase from 'firebase';
 import VueRouter from 'vue-router';
 import { store } from './store/store';
 import { routes } from './router/routes';
-
-// Firebase config - this is provided when you create your app
-// Swap out these settings for your project settings
-const config = {
-    apiKey: "AIzaSyBYplIZS6RbULC5770tXu4GQBqjzHxizic",
-    authDomain: "slide-creator.firebaseapp.com",
-    databaseURL: "https://slide-creator.firebaseio.com",
-    projectId: "slide-creator",
-    storageBucket: "slide-creator.appspot.com",
-    messagingSenderId: "1019489366872"
-};
-
-// Initialize Firebase
-Firebase.initializeApp(config);
+import { firebaseConfig } from './firebaseConfig';
 
 // Set-up and use the Vue Router
 // Pass in your routes and then
